@@ -1,0 +1,25 @@
+{% extends base.html %}
+
+{% block main %}
+
+<div class="row">
+
+<div class="span8 offset2 alert alert-error">
+
+<h1> bummer. </h1>
+<p>
+Something melted.
+</p>
+<p>
+About 100% of the time, the issue is with Netflix's gateway timing out as we
+talk to them.  Please retry soon.
+</p>
+
+<dl>
+<dt>nerd details</dt>
+<dd> {{ errstr }} </dd>
+</dl>
+
+</div>
+
+{% end %}

@@ -35,3 +35,7 @@ class BaseHandler(RequestHandler):
         if self.settings.get('debug_pdb') and not isinstance(e, socket.error):
             import pdb
             pdb.post_mortem()
+
+    def write_error(self, status_code, **kwargs):
+        print "ERROR", status_code, kwargs
+        self.render('error.html', errstr=str(kwargs))
