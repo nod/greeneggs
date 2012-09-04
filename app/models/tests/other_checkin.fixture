@@ -1,0 +1,95 @@
+{
+    "photos": {
+        "count": 0,
+        "items": []
+    },
+    "venue": {
+        "verified": true,
+        "name": "Hopdoddy Burger Bar",
+        "url": "http://www.hopdoddy.com",
+        "menu": {
+            "url": "https://foursquare.com/v/hopdoddy-burger-bar/4cb5e045e262b60c46cb6ae0/menu",
+            "mobileUrl": "https://foursquare.com/v/4cb5e045e262b60c46cb6ae0/device_menu",
+            "type": "foodAndBeverage"
+        },
+        "specials": [],
+        "contact": {
+            "phone": "5122437505",
+            "twitter": "hopdoddy",
+            "formattedPhone": "(512) 243-7505"
+        },
+        "location": {
+            "city": "Austin",
+            "cc": "US",
+            "country": "United States",
+            "postalCode": "78704",
+            "state": "TX",
+            "crossStreet": "btwn Gibson & Elizabeth",
+            "address": "1400 S. Congress Ave.",
+            "lat": 30.249540168503078,
+            "lng": -97.74991035461426
+        },
+        "beenHere": {
+            "count": 0,
+            "marked": false
+        },
+        "stats": {
+            "tipCount": 153,
+            "checkinsCount": 10406,
+            "usersCount": 6274
+        },
+        "id": "4cb5e045e262b60c46cb6ae0",
+        "categories": [
+            {
+                "pluralName": "Burger Joints",
+                "primary": true,
+                "name": "Burger Joint",
+                "parents": [
+                    "Food"
+                ],
+                "shortName": "Burgers",
+                "id": "4bf58dd8d48988d16c941735",
+                "icon": "https://foursquare.com/img/categories/food/burger.png"
+            }
+        ],
+        "likes": {
+            "count": 0,
+            "groups": []
+        }
+    },
+    "source": {
+        "url": "https://foursquare.com/download/#/android",
+        "name": "foursquare for Android"
+    },
+    "createdAt": 1345749068,
+    "timeZone": "America/Chicago",
+    "type": "checkin",
+    "id": "5036804ce4b0101af2cd602d",
+    "timeZoneOffset": -300,
+    "user": {
+        "bio": "http://wesleyfaulkner.com",
+        "gender": "male",
+        "firstName": "Wesley",
+        "relationship": "friend",
+        "lastName": "Faulkner",
+        "lists": {
+            "groups": [
+                {
+                    "count": 2,
+                    "items": [],
+                    "type": "created"
+                }
+            ]
+        },
+        "homeCity": "Austin, TX",
+        "contact": {
+            "twitter": "wesley83",
+            "facebook": "567828201"
+        },
+        "photo": "https://is0.4sqi.net/userpix_thumbs/VCSN2V1WXE0DUO4I.jpg",
+        "tips": {
+            "count": 4
+        },
+        "id": "9854"
+    }
+}

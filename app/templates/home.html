@@ -1,0 +1,105 @@
+{% extends base.html %}
+
+{% block headextra %}
+    <script src="/static/js/jquery.ba-jqmq.js"></script>
+{% end %}
+
+{% block main %}
+
+<script>
+
+var proposed_q = {% raw json_encode( {'p':proposed} ) %};
+
+$(function(){
+
+  $('#output').hide();
+  $('#success').hide();
+
+
+  // Create a new queue.
+  window.queue = $.jqmq({
+    // Next item will be processed only when queue.next() is called in callback.
+    delay: -1,
+    // Process queue items one-at-a-time.
+    batch: 1,
+    // For each queue item, execute this function, making an AJAX request. Only
+    // continue processing the queue once the AJAX request's callback executes.
+    callback: function( item ) {
+      $.post(
+        '/pos',
+        {tid: proposed_q.p[item].id, pos:item}, function(data){
+        $('#progress-bar').css('width', item + '%');
+        // If the request was unsuccessful, make another attempt.
+        console.log(data);
+        queue.next();
+      });
+    },
+
+    // When the queue completes naturally, execute this function.
+    complete: function(){
+      $('#output').hide('slow');
+      $('#success').show();
+    }
+  });
+
+  // Disable AJAX caching.
+  $.ajaxSetup({ cache: false });
+
+  var send_them = function() {
+    i=0;
+    while (i < proposed_q.p.length ) {
+      queue.add(i+1);
+      i++;
+    }
+    queue.start();
+    queue.next();
+  }
+
+  $("#reorder").submit( function () {
+      $("#output").show('slow');
+      $('#output').append( '<span class="done">starting<\/span>' );
+      send_them();
+      return false;
+  });
+});
+</script>
+
+    <div class="row">
+        <div class="span12">
+
+
+      <div id="success" class="alert alert-success">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>finished!</strong>  you're probably done... 
+      </div>
+
+          <div id="output">
+<div class="progress progress-striped active">
+  <div id="progress-bar" class="bar" style="width: 0%;"></div>
+</div>
+          </div>
+
+            <div class="page-header">
+                <h1> home <small>green eggs</small> </h1>
+            </div>
+
+<form class="inline" method="POST" action="/pos" id="reorder">
+  <button id="mixit" type="submit" class="btn btn-large btn-primary"> mix it up </button>
+</form>
+
+<ul class="unstyled">
+  {% for d in proposed %}
+  <li >
+    <div class="row">
+      <div class="span1"> <img src="{{ d['boxart'] }}" alt="{{ d['title'] }}" /> </div>
+      <div class="span11">
+        <h2> {{ d['title'] }} </h2>
+      </div>
+    </div>
+  </li>
+  {% end %}
+</ul>
+
+        </div><!-- span12 -->
+      </div><!-- row -->
+{% end %}

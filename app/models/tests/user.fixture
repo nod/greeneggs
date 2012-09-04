@@ -1,0 +1,28 @@
+{
+	"access_token": "faketoken",
+	"bio": "",
+	"relationship": "self",
+	"photo": "https://is1.4sqi.net/userpix_thumbs/Q3RASGGZOAPPGXOI.jpg",
+	"lists": {
+		"groups": [
+			{
+				"count": 1,
+				"items": [],
+				"type": "created"
+			}
+		]
+	},
+	"homeCity": "Austin, TX",
+	"id": "54549",
+	"firstName": "Jeremy",
+	"lastName": "Kelley",
+	"contact": {
+		"phone": "9798208202",
+		"twitter": "nod",
+		"email": "jeremy@33ad.org"
+	},
+	"gender": "male",
+	"tips": {
+		"count": 6
+	}
+}

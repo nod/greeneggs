@@ -1,0 +1,12 @@
+from os.path import dirname
+
+# BELOW SETTINGS GOOD FOR DEV... BAD FOR PROD
+settings = dict(
+    debug = True,
+    debug_pdb = True,
+    cookie_secret = 'i am the walrus',
+
+    # foursquare provider gorp
+    netflix_consumer_key = '',
+    netflix_consumer_secret = '',
+    )
