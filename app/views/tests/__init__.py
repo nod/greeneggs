@@ -54,18 +54,6 @@ class RequestHandlerTest(AsyncHTTPTestCase):
         """
         self._authenticated_as = u
 
-    @classmethod
-    def setUpClass(cls):
-        if hasattr(super(cls), 'setUpClass'): super(cls).setUpClass()
-        cls.checkin_fixture = open(
-            '{}/checkin.fixture'.format(dirname(__file__))
-            ).read()
-
-        cin = json.loads(cls.checkin_fixture)
-        # let's cleanup our user collection before each set of tests
-        for u in User.find(): u.delete()
-        User.from_fs_dict(cin['user'])
-
     def get_app(self):
         if self._app: return self._app
 

@@ -3,4 +3,4 @@ tornado
 -e git+git://github.com/nod/tornroutes#egg=tornroutes
 -e git+git://github.com/nod/mogo@default-fixes#egg=mogo
 -e git+git://github.com/tantalor/pretty_timedelta.git#egg=pretty_timedelta
-python-netflix
+-e git+file:///Users/jeremy/Work/virtualenv/netflix/python-netflix#egg=python-netflix
