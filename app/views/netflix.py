@@ -34,7 +34,7 @@ class NetflixAuthError(NetflixAPIError): pass
 
 
 class NetflixAPI(object):
-    def __init__(self, api_key=None, api_secret=None, oauth_token=None, \
+    def __init__(self, api_key=None, api_secret=None, oauth_token=None,
                 oauth_token_secret=None, callback_url='', headers=None):
 
         self.api_key = api_key and u'%s' % api_key
@@ -77,8 +77,7 @@ class NetflixAPI(object):
         """
 
         url = self.request_token_url + '?oauth_callback=' + self.callback_url
-        response = self.client.get(url, headers=self.headers, auth=self.auth)
-
+        response = requests.post(url,  auth=self.auth)
         if response.status_code != 200:
             raise NetflixAuthError('There was a problem retrieving an authentication url.')
 
